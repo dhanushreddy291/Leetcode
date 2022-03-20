@@ -3,11 +3,8 @@ class Solution {
         int N = directions.length(), i = 0, collisions = 0;
         while (i < N && directions.charAt(i) == 'L') i++;
         while (i < N) {
-            while (i < N && directions.charAt(i) == 'L') {
-                collisions++;
-                i++;
-            }
-            if (i < N - 1) {
+            if (directions.charAt(i) == 'L') collisions++;
+            else if (i < N - 1) {
                 if (directions.charAt(i) == 'R') {
                     int similarCars = 0;
                     while (i < N - 1 && directions.charAt(i + 1) == 'R') {
