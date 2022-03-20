@@ -1,5 +1,6 @@
 class Solution {
 private:
+    int maxScore = 0;
     int score(vector <int> bobArrows, vector <int> aliceArrows) {
         int Score = 0;
         for (int i = 0; i < 12; i++) {
@@ -7,7 +8,7 @@ private:
         }
         return Score;
     }
-    void helper(int numArrows, vector <int> &aliceArrows, vector <int> &bobArrows, int position, int &maxScore, vector <int> &answerArrows) {
+    void helper(int numArrows, vector <int> &aliceArrows, vector <int> &bobArrows, int position, vector <int> &answerArrows) {
         if (numArrows == 0 || position == 0) {
             int currentScore = score(bobArrows, aliceArrows);
             if (currentScore > maxScore) {
@@ -20,18 +21,17 @@ private:
         } else if (position > 0 && numArrows > 0) {
             if (numArrows > aliceArrows[position]) {
                 bobArrows[position] = aliceArrows[position] + 1;
-                helper(numArrows - bobArrows[position], aliceArrows, bobArrows, position - 1, maxScore, answerArrows);
+                helper(numArrows - bobArrows[position], aliceArrows, bobArrows, position - 1, answerArrows);
                 bobArrows[position] = 0;
             }
-            helper(numArrows, aliceArrows, bobArrows, position - 1, maxScore, answerArrows);
+            helper(numArrows, aliceArrows, bobArrows, position - 1, answerArrows);
         }
         return;
     }
 public:
     vector<int> maximumBobPoints(int numArrows, vector<int>& aliceArrows) {
         vector <int> bobArrows(12, 0), answerArrows(12, 0);
-        int maxScore = 0;
-        helper(numArrows, aliceArrows, bobArrows, 11, maxScore, answerArrows);
+        helper(numArrows, aliceArrows, bobArrows, 11, answerArrows);
         return answerArrows;
     }
 };
