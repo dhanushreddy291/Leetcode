@@ -7,10 +7,7 @@ public:
             else target++;
             operations++;
         }
-        while (target < startValue) {
-            target++;
-            operations++;        
-        }
+        operations += startValue - target;        
         return operations;
     }
 };
