@@ -10,7 +10,6 @@ private:
         for (; i < s.size(); i++) {
             Num = 10 * Num + (s[i] - '0');
         }
-        cout << "Num = " << Num << "\n";
         if (isNegative) return -1 * Num;
         else return Num;
     }
@@ -27,7 +26,6 @@ public:
         int points = 0;
         for (int num : Operations) {
             points += num;
-            cout << num << ", ";
         }
         return points;
     }
