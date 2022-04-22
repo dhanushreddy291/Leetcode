@@ -22,8 +22,7 @@ public:
     void put(int key, int value) {
         int Mod = key % PrimeNum;
         if (Map[Mod] == NULL) {
-            Map[Mod] = new LinkedList(key, value);
-            cout << Map[Mod] -> key << ", " << Map[Mod] -> val << "\n";  
+            Map[Mod] = new LinkedList(key, value);  
         }
         else {
             LinkedList* Current = Map[Mod];
