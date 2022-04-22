@@ -11,7 +11,7 @@ private:
         }  
     };
     
-    int PrimeNum = 1201;
+    int PrimeNum = 769;
     LinkedList *temp = NULL;
     
 public:
