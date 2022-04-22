@@ -1,21 +1,24 @@
 class MyHashMap {
 
-struct LinkedList {
-    int key, val;
-    LinkedList* next;
-    LinkedList(int key, int val, LinkedList* next = NULL) {
-        this -> key = key;
-        this -> val = val;
-        this -> next = next;
-    }  
-};
-
-public:
+private:
+    struct LinkedList {
+        int key, val;
+        LinkedList* next;
+        LinkedList(int key, int val, LinkedList* next = NULL) {
+            this -> key = key;
+            this -> val = val;
+            this -> next = next;
+        }  
+    };
+    
     int PrimeNum = 1201;
     LinkedList *temp = NULL;
+    
+public:
+    
     vector <LinkedList*> Map;
     MyHashMap() {
-        vector <LinkedList*> K(1201, temp);
+        vector <LinkedList*> K(PrimeNum, temp);
         Map = K;
     }
     
