@@ -46,20 +46,21 @@ public:
     }
     
     void remove(int key) {
+        cout << key << "\n";
         int Mod = key % PrimeNum;
         if (Map[Mod] == NULL) return;
         else {
             LinkedList* Current = Map[Mod], *Prev = Current;
             if (Current -> key == key) {
                 Map[Mod] = Current -> next;
-                //free(Current);
+                delete(Current);
                 return;
             }
             Current = Current -> next;
             while (Current != NULL) {
                 if (Current -> key == key) {
                     Prev -> next = Current -> next;
-                    //free(Current);
+                    delete(Current);
                     return;
                 }
                 Prev = Current;
