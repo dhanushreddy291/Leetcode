@@ -12,11 +12,11 @@ struct LinkedList {
 
 public:
     int PrimeNum = 1201;
+    LinkedList *temp = NULL;
     vector <LinkedList*> Map;
     MyHashMap() {
-        for (int i = 0; i < PrimeNum; i++) {
-            Map.push_back(NULL);
-        }
+        vector <LinkedList*> K(1201, temp);
+        Map = K;
     }
     
     void put(int key, int value) {
@@ -46,7 +46,6 @@ public:
     }
     
     void remove(int key) {
-        cout << key << "\n";
         int Mod = key % PrimeNum;
         if (Map[Mod] == NULL) return;
         else {
