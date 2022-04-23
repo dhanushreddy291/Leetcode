@@ -2,12 +2,10 @@ class Solution {
 public:
     // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
-        srand(time(0));
-        string code = "";
+        string code;
         while (url2code.find(longUrl) == url2code.end()) {
-            for (int i = 0; i < 6; i++) {
-                code += alphabets[rand() % 62];
-            }
+            random_shuffle(alphabets.begin(), alphabets.end());
+            code = alphabets.substr(0, 6);
             if (code2url.find(code) == code2url.end()) {
                 code2url[code] = longUrl;
                 url2code[longUrl] = code;
