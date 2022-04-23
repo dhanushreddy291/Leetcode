@@ -3,6 +3,7 @@ public:
     // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
         string code;
+        srand(time(0));
         while (url2code.find(longUrl) == url2code.end()) {
             random_shuffle(alphabets.begin(), alphabets.end());
             code = alphabets.substr(0, 6);
