@@ -1,8 +1,7 @@
 class Solution {
 public:
     double average(vector<int>& salary) {
-        int Sum = 0, count = 0;
-        int maxElement = *max_element(salary.begin(), salary.end()), minElement = *min_element(salary.begin(), salary.end());
+        int Sum = 0, count = 0, maxElement = *max_element(salary.begin(), salary.end()), minElement = *min_element(salary.begin(), salary.end());
         for (int &sal: salary) {
             if (sal != maxElement && sal != minElement) {
                 Sum += sal;
