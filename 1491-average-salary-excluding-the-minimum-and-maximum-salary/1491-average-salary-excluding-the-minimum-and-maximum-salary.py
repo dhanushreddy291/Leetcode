@@ -1,8 +1,12 @@
-class Solution:
-    def average(self, salary: List[int]) -> float:
-        Sum, count, maxElement, minElement = 0, 0, max(salary), min(salary)
-        for sal in salary:
-            if sal != maxElement and sal != minElement:
-                Sum += sal
-                count += 1
-        return Sum / count
+class Solution {
+    public double average(int[] salary) {
+        int Sum = 0, count = 0, maxElement = Arrays.stream(salary).max().getAsInt(), minElement = Arrays.stream(salary).min().getAsInt();
+        for (int sal: salary) {
+            if (sal != maxElement && sal != minElement) {
+                Sum += sal;
+                count++;
+            }
+        }
+        return (double) Sum / (double) count;
+    }
+}
