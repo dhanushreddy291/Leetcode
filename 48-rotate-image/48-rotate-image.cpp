@@ -8,9 +8,7 @@ public:
             }
         }
         for (int i = 0; i < n/2; i++) {
-            for (int j = 0; j < n; j++) {
-                swap(matrix[i][j], matrix[n - 1 - i][j]);
-            }
+            swap(matrix[i], matrix[n - 1 -i]);
         }
     }
 };
