@@ -1,9 +1,11 @@
 class Solution {
-    public int removePalindromeSub(String s) {
-        int N = s.length();
-        for (int i = 0; i < N / 2; i++) {
-            if (s.charAt(i) != s.charAt(N - 1 - i)) return 2;
+    public int removePalindromeSub(String S) {
+        if (S.length() == 0) return 0;
+        else {
+            for (int i = 0; i < S.length()/2; i++) {
+                if (S.charAt(i) != S.charAt(S.length() - i - 1)) return 2;
+            }
+            return 1;
         }
-        return N > 0 ? 1 : 0;
     }
 }
