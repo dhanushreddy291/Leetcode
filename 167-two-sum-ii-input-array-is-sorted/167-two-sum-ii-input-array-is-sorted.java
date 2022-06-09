@@ -7,6 +7,6 @@ class Solution {
             else i++;
         }
         // Wont even come here as solution exists always
-        return new int[]{};
+        return numbers;
     }
 }
