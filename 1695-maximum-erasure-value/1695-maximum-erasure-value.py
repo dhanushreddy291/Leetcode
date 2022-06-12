@@ -8,10 +8,9 @@ class Solution:
                     Set.remove(nums[start])
                     start += 1
                 start += 1
-                end += 1
             else:
                 currSum += nums[end]
                 maxSum = max(maxSum, currSum)
                 Set.add(nums[end])
-                end += 1
+            end += 1
         return maxSum
