@@ -1,3 +1,3 @@
 class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        return ''.join([str(word1[i]) + str(word2[i]) for i in range(min(len(word1), len(word2)))]) + word1[min(len(word1), len(word2)):] + word2[min(len(word1), len(word2)):]
+    def mergeAlternately(self, a: str, b: str) -> str:
+        return ''.join([str(a[i]) + str(b[i]) for i in range(min(len(a), len(b)))]) + a[min(len(a), len(b)):] + b[min(len(a), len(b)):]
