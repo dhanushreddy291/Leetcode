@@ -11,7 +11,7 @@ class Solution {
         nextGreater[nums2[i]] = (Stack.empty()) ? -1 : Stack.top();
         Stack.push(nums2[i]);
       }
-      for (int i = 0; i < M; i++) nums1[i] = nextGreater[nums1[i]];
+      for (int j = 0; j < M; j++) nums1[j] = nextGreater[nums1[j]];
       return nums1;
     }
 };
