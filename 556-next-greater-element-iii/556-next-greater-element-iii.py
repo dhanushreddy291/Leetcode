@@ -1,6 +1,6 @@
 class Solution:
     def nextGreaterElement(self, n: int) -> int:
-        Num = [str(i) for i in str(n)]
+        Num = [int(i) for i in str(n)]
         for i in range(len(Num) - 2, -1, -1):
             if Num[i] < Num[i + 1]:
                 Min = i + 1
@@ -9,6 +9,6 @@ class Solution:
                         Min = j
                 Num[i], Num[Min] = Num[Min], Num[i]
                 Num[i+1:] = sorted(Num[i+1:])
-                Ans = int(''.join(Num))
+                Ans = int("". join([str(i) for i in Num]))
                 return -1 if Ans > (2**31) - 1 else Ans
         return -1
