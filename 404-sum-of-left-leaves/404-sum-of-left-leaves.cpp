@@ -12,6 +12,6 @@
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
-                return root ? sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right) + (root->left && !root->left->left and !root->left->right ? root->left->val : 0) : 0;
+        return root ? sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right) + (root->left && !root->left->left and !root->left->right ? root->left->val : 0) : 0;
     }
 };
