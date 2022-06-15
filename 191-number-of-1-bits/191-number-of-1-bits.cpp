@@ -7,5 +7,6 @@ public:
             bits++;
         }
         return bits;
+        // We can also use inbuilt function __builtin_popcount(n) to return number of set bits.
     }
 };
