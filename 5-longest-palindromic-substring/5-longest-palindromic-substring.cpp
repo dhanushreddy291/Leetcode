@@ -6,7 +6,7 @@ public:
         for (int length = 0; length < N; length++) {
             for (int i = 0, j = length; j < N; i++, j++) {
                 if (i == j) DP[i][j] = true;
-                else if (length == 1) DP[i][j] = (s[i] == s[j]);
+                else if (j - i == 1) DP[i][j] = (s[i] == s[j]);
                 else DP[i][j] = (s[i] == s[j] && DP[i + 1][j - 1]);
                 if (DP[i][j] and j - i + 1 > maxLength) {
                     maxLength = j - i + 1;
