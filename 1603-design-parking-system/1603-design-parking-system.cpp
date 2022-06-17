@@ -3,11 +3,11 @@ private:
     vector <int> Cars;
 public:
     ParkingSystem(int big, int medium, int small) {
-        Cars = {0, big, medium, small};
+        Cars = {big, medium, small};
     }
     
     bool addCar(int carType) {
-        return Cars[carType]-- > 0;
+        return Cars[carType - 1]-- > 0;
     }
 };
 
