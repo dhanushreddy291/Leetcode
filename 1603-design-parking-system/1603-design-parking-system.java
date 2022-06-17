@@ -7,10 +7,7 @@ class ParkingSystem {
     }
     
     public boolean addCar(int carType) {
-        if (Cars[carType - 1] > 0) {
-            Cars[carType - 1]--;
-            return true;
-        } else return false;
+        return Cars[carType - 1]-- > 0;
     }
 }
 
