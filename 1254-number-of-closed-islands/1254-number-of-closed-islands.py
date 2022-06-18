@@ -1,7 +1,7 @@
 class Solution:
     def closedIsland(self, grid: List[List[int]]) -> int:
 
-        N, M, closed, ds = len(grid), len(grid[0]), 0, [-1, 1, 0, 0]
+        N, M, closedIslands, ds = len(grid), len(grid[0]), 0, [-1, 1, 0, 0]
 
         def isValidPos(x, y, X, Y):
             return x >= 0 and y >= 0 and x < X and y < Y
@@ -24,7 +24,7 @@ class Solution:
         for i in range(1, N - 1):
             for j in range(1, M - 1):
                 if grid[i][j] == 0:
-                    closed += 1
+                    closedIslands += 1
                     DFS(i, j, N, M, grid)
         
-        return closed
+        return closedIslands
