@@ -13,4 +13,6 @@ class Solution:
 
         for i in range(N):
             mat[i][0] = findSoldiers(mat[i], 0, M - 1)
-        return [item[1] for item in sorted([(mat[i][0], i) for i in range(N)])[ : k]]
+        rowsList = [(mat[i][0], i) for i in range(N)]
+        rowsList.sort()
+        return [rowsList[x][1] for x in range(k)]
