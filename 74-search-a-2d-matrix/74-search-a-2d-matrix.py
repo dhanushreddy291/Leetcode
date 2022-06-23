@@ -12,4 +12,5 @@ class Solution:
             if matrix[x][y] == target: return True
             elif matrix[x][y] > target: end = mid - 1
             else: start = mid + 1
+        
         return False
