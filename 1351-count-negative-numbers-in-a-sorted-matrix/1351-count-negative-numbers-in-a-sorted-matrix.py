@@ -12,7 +12,7 @@ class Solution:
                     lo = mid + 1
                 else:
                     hi = mid - 1
-            return M - 1 - hi
+            return M - lo
          
         for i in range(N):
             count += findPositiveIndex(grid, i)
