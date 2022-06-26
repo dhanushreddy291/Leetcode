@@ -14,4 +14,4 @@ class Solution:
                 if not Visited[room]:
                     Queue.put(room)
                     Visited[room] = True
-        return False if False in Visited else True
+        return not False in Visited
