@@ -10,7 +10,7 @@ class Solution:
             mid = (start + end) // 2
             (x, y) = coordinatesFindKaro(rows, columns, mid)
             if matrix[x][y] == target: return True
-            elif matrix[x][y] > target: end = mid - 1
+            if matrix[x][y] > target: end = mid - 1
             else: start = mid + 1
         
         return False

@@ -5,8 +5,7 @@ class ParkingSystem:
         if self.Cars[carType - 1] > 0:
             self.Cars[carType - 1] -= 1
             return True
-        else: 
-            return False
+        return False
         
 
 
