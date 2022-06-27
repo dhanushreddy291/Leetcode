@@ -1,7 +1,7 @@
 class Solution
 {
 private:
-    string add(string &a, string &b)
+    string add(string &a, string &b, int base)
     {
         int n = a.size();
         string ans = "";
@@ -14,8 +14,8 @@ private:
                 A = (a[i] - '0');
             }
             int sum = A + B + carry;
-            ans += (sum % 2 + '0');
-            carry = sum / 2;
+            ans += (sum % base + '0');
+            carry = sum / base;
         }
         if (carry > 0)
             ans += (carry + '0');
@@ -23,16 +23,16 @@ private:
         return ans;
     }
 
-    string stringAdder(string &a, string &b)
+    string stringAdder(string &a, string &b, int base)
     {
         if (a.size() < b.size())
-            return add(a, b);
-        return add(b, a);
+            return add(a, b, base);
+        return add(b, a, base);
     }
 
 public:
     string addBinary(string a, string b)
     {
-        return stringAdder(a, b);
+        return stringAdder(a, b, 2);
     }
 };
