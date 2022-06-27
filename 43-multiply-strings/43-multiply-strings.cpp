@@ -67,6 +67,10 @@ private:
 
     string stringMultiplier(string &a, string &b)
     {
+        if ((a.size() == 1 && a[0] == '0') || (b.size() == 1 && b[0] == '0'))
+        {
+            return "0";
+        }
         if (b.size() < a.size())
             return multiplier(b, a);
         return multiplier(a, b);
@@ -75,9 +79,6 @@ private:
 public:
     string multiply(string num1, string num2)
     {
-        if ((num1.size() == 1 && num1[0] == '0') || (num2.size() == 1 && num2[0] == '0')) {
-            return "0";
-        }
         return stringMultiplier(num1, num2);
     }
 };
