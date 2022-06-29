@@ -4,9 +4,8 @@ class Solution:
         while i < N:
             if prices[i] < Min:
                 Min = prices[i]
-                i += 1
             else:
                 profit += (prices[i] - Min)
                 Min = prices[i]
-                i += 1
+            i += 1
         return profit
