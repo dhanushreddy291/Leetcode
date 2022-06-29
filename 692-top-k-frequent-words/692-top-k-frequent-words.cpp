@@ -1,12 +1,11 @@
+class Comparator {
+public:
+    bool operator() (const pair <int, string> &A, const pair <int, string> &B) {
+        if (A.first == B.first) return A.second.compare(B.second) > 0;
+        return A.first < B.first;
+    }
+};
 class Solution {
-private:
-    class Comparator {
-        public:
-            bool operator() (const pair <int, string> &A, const pair <int, string> &B) {
-                if (A.first == B.first) return A.second.compare(B.second) > 0;
-                return A.first < B.first;
-            }
-    };
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
         unordered_map <string, int> Map;
