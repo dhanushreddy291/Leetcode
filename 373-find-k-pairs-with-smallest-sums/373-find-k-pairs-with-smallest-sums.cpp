@@ -12,7 +12,7 @@ public:
         int N = nums1.size(), M = nums2.size();
         set <pair <int, int>> Set;
         Heap.push({nums1[0] + nums2[0], {0, 0}});
-        if ((long)k > (long)N * (long)M) k = N * M;
+        if (k > (long)N * M) k = N * M;
         while (k--) {
             pair <int, vector <int>> Min = Heap.top();
             Heap.pop();
