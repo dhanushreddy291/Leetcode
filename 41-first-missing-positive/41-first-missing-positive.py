@@ -4,13 +4,13 @@ class Solution:
         for i in range(N):
             if not 0 < nums[i] <= N:
                 nums[i] = 0
-        print(nums)
         for i in range(N):
-            if abs(nums[i]) > 0 and abs(nums[i]) != 5000000:
-                if nums[abs(nums[i]) - 1] == 0:
-                    nums[abs(nums[i]) - 1] = -5000000
+            Abs = abs(nums[i])
+            if 0 < Abs <= N:
+                if nums[Abs - 1] == 0:
+                    nums[Abs - 1] = -5000000
                 else:
-                    nums[abs(nums[i]) - 1] = -abs(nums[abs(nums[i]) - 1])
+                    nums[Abs - 1] = -abs(nums[Abs - 1])
         for i in range(N):
             if nums[i] >= 0:
                 return i + 1
