@@ -8,7 +8,7 @@ class Solution:
             Abs = abs(nums[i])
             if 0 < Abs <= N:
                 if nums[Abs - 1] == 0:
-                    nums[Abs - 1] = -5000000
+                    nums[Abs - 1] = -(N + 1)
                 else:
                     nums[Abs - 1] = -abs(nums[Abs - 1])
         for i in range(N):
