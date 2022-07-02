@@ -9,7 +9,7 @@ class Solution:
         # Return the Max Path Sum
         return self.PathSum
 
-    def helper(self, root):
+    def helper(self, root: Optional[TreeNode]) -> int:
         if root:
             # Just Believe that Recursion works with a leap of faith and call the left and right subtrees \U0001f643
             leftSum = self.helper(root.left)
