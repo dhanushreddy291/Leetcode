@@ -10,7 +10,7 @@ class Solution:
             l2 = nums2[mid2 - 1] if mid2 > 0 else -(10**6)
             r1 = nums1[mid1] if mid1 < N else 10**6
             r2 = nums2[mid2] if mid2 < M else 10**6
-            if l1 <= r2 and l2 <= r1:
+            if max(l1, l2) <= min(r1, r2):
                 if (N + M) % 2 == 0:
                     return (max(l1, l2) + min(r1, r2)) / 2
                 return max(l1, l2)
