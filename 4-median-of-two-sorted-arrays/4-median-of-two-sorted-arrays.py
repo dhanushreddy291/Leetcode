@@ -11,11 +11,10 @@ class Solution:
             r1 = nums1[mid1] if mid1 < N else 10**6
             r2 = nums2[mid2] if mid2 < M else 10**6
             if max(l1, l2) <= min(r1, r2):
-                if ((N + M) & 1) == 0:
+                if (N + M) % 2 == 0:
                     return (max(l1, l2) + min(r1, r2)) / 2
                 return max(l1, l2)
             elif l1 < r2:
                 lo = mid1 + 1
             else:
                 hi = mid1 - 1
-        return 0.0
