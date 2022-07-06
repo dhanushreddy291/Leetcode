@@ -15,25 +15,23 @@ class Solution:
         return head
 
     def mergeSort(self, head, tail):
-        if head is not None:
-            currNode, length = head, 0
-            while currNode is not None:
-                length += 1
-                currNode = currNode.next
-            length = ((1 + length) // 2) - 1
-            currNode = head
-            while length > 0:
-                length -= 1
-                currNode = currNode.next
-            rightNode = currNode.next
-            currNode.next = None
-            leftPart = head if head == currNode else self.mergeSort(head, currNode)
-            rightPart = tail if rightNode == tail else self.mergeSort(rightNode, tail)
-            return self.merge(leftPart, rightPart)
-        return head
+        if head == tail: return head
+        currNode, length = head, 0
+        while currNode is not None:
+            length += 1
+            currNode = currNode.next
+        # To get to the middle node the middle node index is (1 + length) / 2 - 1
+        length = ((1 + length) // 2) - 1
+        currNode = head
+        while length > 0:
+            length -= 1
+            currNode = currNode.next
+        rightNode = currNode.next
+        currNode.next = None
+        return self.merge(self.mergeSort(head, currNode), self.mergeSort(rightNode, tail))
 
     def merge(self, L, R):
-        if L is not None and R is not None:
+        if L and R:
             head = None
             if L.val < R.val:
                 head = L
@@ -43,7 +41,7 @@ class Solution:
                 R = R.next
             head.next = self.merge(L, R)
             return head
-        elif L is not None:
+        elif L:
             return L
         else:
             return R
