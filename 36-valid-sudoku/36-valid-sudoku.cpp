@@ -5,7 +5,8 @@ private:
     }
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        vector <vector <bool>> Row(9, vector <bool> (9, false)), Column(Row), Grid(Row);
+        vector <bool> temp(9, false);
+        vector <vector <bool>> Row(9, temp), Column(9, temp), Grid(9, temp);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] != '.') {
@@ -13,7 +14,9 @@ public:
                     if (Row[i][num] || Column[j][num] || Grid[gridId][num]) {
                         return false;
                     }
-                    Row[i][num] = Column[j][num] = Grid[gridId][num] = true;
+                    Row[i][num] = true;
+                    Column[j][num] = true;
+                    Grid[gridId][num] = true;
                 }
             }
         }
