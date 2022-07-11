@@ -4,12 +4,12 @@ private:
     void findPermutations(int i, int N, unordered_map <int, int> &Map, vector <vector <int>> &permutations, vector <int> &permutation) {
         if (i == N) permutations.push_back(permutation);
         else {
-            for (auto it = Map.begin(); it != Map.end(); it++) {
-                if (it->second > 0) {
-                    it->second--;
-                    permutation.push_back(it->first);
+            for (auto &it: Map) {
+                if (it.second > 0) {
+                    it.second--;
+                    permutation.push_back(it.first);
                     findPermutations(i + 1, N, Map, permutations, permutation);
-                    it->second++;
+                    it.second++;
                     permutation.pop_back();
                 }
             }
