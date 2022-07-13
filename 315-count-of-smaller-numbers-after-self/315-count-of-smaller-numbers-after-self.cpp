@@ -33,8 +33,10 @@ private:
         mergeSort(mid + 1, end, nums, inversions, index);
         merge(start, mid, end, nums, inversions, index);
     }
-
-    vector <int> findGlobalInversions(vector <int> &nums, int N) {
+    
+public:
+    vector<int> countSmaller(vector<int>& nums) {
+        int N = nums.size();
         vector <int> inversions(N, 0);
         vector <int> index;
         for (int i = 0; i < N; i++) {
@@ -42,9 +44,5 @@ private:
         }
         mergeSort(0, N - 1, nums, inversions, index);
         return inversions;
-    }
-public:
-    vector<int> countSmaller(vector<int>& nums) {
-        return findGlobalInversions(nums, nums.size());
     }
 };
