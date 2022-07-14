@@ -9,8 +9,6 @@ class Solution:
         def helper(p1, p2, i1, i2):
             if i1 > i2:
                 return None
-            if i1 == i2:
-                return TreeNode(inorder[i1])
             index = inorder.index(preorder[p1])
             return TreeNode(
                 preorder[p1],
