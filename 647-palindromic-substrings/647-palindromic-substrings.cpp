@@ -10,10 +10,6 @@ public:
                 if (length == 1) isPalindrome[i][j] = 1;
                 else if (length == 2) isPalindrome[i][j] = s[i] == s[j];
                 else isPalindrome[i][j] = (s[i] == s[j] && isPalindrome[i + 1][j - 1]);
-            }
-        }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
                 palindromes += isPalindrome[i][j];
             }
         }
