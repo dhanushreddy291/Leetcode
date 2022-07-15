@@ -1,8 +1,8 @@
 class Solution:
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:
-        currCount, totalCount = 0, 0
-        for i in range(2, len(nums)):
-            if nums[i] + nums[i - 2] == 2 * nums[i - 1]:
+        currCount, totalCount, N = 0, 0, len(nums)
+        for i in range(2, N):
+            if nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]:
                 currCount += 1
                 totalCount += currCount
             else:
