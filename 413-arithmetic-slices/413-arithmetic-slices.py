@@ -11,8 +11,13 @@ class Solution:
             count += isArithmetic[i]
             i += 1
         while size > 0:
+            localCount = 0
             for i in range(size):
                 isArithmetic[i] *= isArithmetic[i + 1]
-                count += isArithmetic[i]
+                localCount += isArithmetic[i]
+            if localCount == 0:
+                return count
+            else:
+                count += localCount
             size -= 1
         return count
