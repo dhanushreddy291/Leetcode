@@ -3,6 +3,7 @@ class Solution:
         i = 0
         for j in range(len(nums)):
             if nums[j] != val:
-                nums[i], nums[j] = nums[j], nums[i]
+                if i != j:
+                    nums[i], nums[j] = nums[j], nums[i]
                 i += 1
         return i
