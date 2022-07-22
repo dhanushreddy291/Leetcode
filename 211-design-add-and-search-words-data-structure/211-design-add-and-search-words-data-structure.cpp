@@ -29,7 +29,7 @@ public:
         Root -> endWord = true;
     }
 
-    bool helper(string word, int i, int N, WordDictionary* Root) {
+    bool helper(string &word, int i, int N, WordDictionary* Root) {
         if (Root == NULL) return false;
         if (i == N) return Root -> endWord;
         if (word[i] != '.') {
