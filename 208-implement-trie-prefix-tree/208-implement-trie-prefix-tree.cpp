@@ -1,13 +1,16 @@
 class Trie {
+
+private:
     Trie* Head;
     bool wordEnd;
     Trie* Words[26];
+	
 public:
     Trie() {
-        Head = NULL;
-        wordEnd = false;
+        this -> Head = NULL;
+        this -> wordEnd = false;
         for (int i = 0; i < 26; i++) {
-            Words[i] = NULL;
+            this -> Words[i] = NULL;
         }
     }
     
@@ -52,11 +55,3 @@ public:
         return true;
     }
 };
-
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie* obj = new Trie();
- * obj->insert(word);
- * bool param_2 = obj->search(word);
- * bool param_3 = obj->startsWith(prefix);
- */
