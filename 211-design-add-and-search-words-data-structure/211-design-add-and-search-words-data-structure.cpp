@@ -29,7 +29,7 @@ public:
         Root -> endWord = true;
     }
 
-    bool helper(string &word, int i, int N, WordDictionary* Root) {
+    bool helper(string word, int i, int N, WordDictionary* Root) {
         if (Root == NULL) return false;
         if (i == N) return Root -> endWord;
         if (word[i] != '.') {
@@ -50,7 +50,7 @@ public:
     
     bool search(string word) {
         if (Head == NULL) return false;
-        return helper(word, 0, word.size(), Head);
+        return this -> helper(word, 0, word.size(), Head);
     }
 };
 
