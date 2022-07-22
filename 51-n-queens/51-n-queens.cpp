@@ -5,10 +5,8 @@ private:
         while (i >= 0 && j >= 0) {
             if (board[i--][j--] == 'Q') return false;
         }
-        i = x - 1;
-        j = y + 1;
-        while (i >= 0 && j < n) {
-            if (board[i--][j++] == 'Q') return false;
+        while (x > 0 && y < n - 1) {
+            if (board[--x][++y] == 'Q') return false;
         }
         return true;
     }
