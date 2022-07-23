@@ -8,6 +8,10 @@ public:
             minCoinsRequired[i] = INT_MAX;
             for (int j = 0; j < coins.size(); j++) {
                 if (i - coins[j] < 0) break;
+                if (i == coins[j]) {
+                    minCoinsRequired[i] = 1;
+                    break;
+                }
                 if (minCoinsRequired[i - coins[j]] != INT_MAX) {
                     minCoinsRequired[i] = min(minCoinsRequired[i], 1 + minCoinsRequired[i - coins[j]]);
                 }
