@@ -5,7 +5,7 @@ class Solution {
         DP[0] = 1;
         for (int i = 0; i < coins.length; i++) {
             for (int j = coins[i]; j <= amount; j++) {
-                DP[j] += (j >= coins[i]) ? DP[j - coins[i]] : 0;
+                DP[j] += DP[j - coins[i]];
             }
         }
         return DP[amount];
