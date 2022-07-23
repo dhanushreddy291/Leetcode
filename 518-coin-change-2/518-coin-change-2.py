@@ -3,5 +3,5 @@ class Solution:
         DP = [1] + [0] * amount
         for coin in coins:
             for j in range(coin, amount + 1):
-                DP[j] += DP[j - coin] if coin <= j else 0
+                DP[j] += DP[j - coin]
         return DP[-1]
