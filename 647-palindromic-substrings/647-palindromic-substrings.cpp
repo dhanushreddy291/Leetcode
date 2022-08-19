@@ -1,18 +1,22 @@
 class Solution {
 public:
     int countSubstrings(string s) {
-        int N = s.size(), palindromes = 0;
-        int isPalindrome[N][N];
-        memset(isPalindrome, 0, sizeof(isPalindrome));
-        for (int length = 1; length <= N; length++) {
-            int i = 0, j = i + length - 1;
-            for (int i = 0, j = i + length - 1; j < N; i++, j++) {
-                if (length == 1) isPalindrome[i][j] = 1;
-                else if (length == 2) isPalindrome[i][j] = s[i] == s[j];
-                else isPalindrome[i][j] = (s[i] == s[j] && isPalindrome[i + 1][j - 1]);
-                palindromes += isPalindrome[i][j];
+        int N = s.size(), count = 0;
+        vector <vector <bool>> DP(N, vector <bool> (N, false));
+        for (int length = 0; length < N; length++) {
+            for (int i = 0; i < N - length; i++) {
+                int j = i + length;
+                int Length = length + 1;
+                if (Length == 1) DP[i][j] = true;
+                else if (Length == 2) DP[i][j] = (s[i] == s[j]);
+                else {
+                    if (s[i] == s[j]) {
+                        DP[i][j] = DP[i + 1][j - 1];
+                    }
+                }
+                count += (DP[i][j] ? 1 : 0);
             }
         }
-        return palindromes;
+        return count;
     }
 };
